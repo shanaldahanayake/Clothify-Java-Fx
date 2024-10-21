@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.LoginFormController">
+   <children>
+      <Pane prefHeight="98.0" prefWidth="600.0" style="-fx-background-color: #091057;">
+         <children>
+            <Text fill="WHITE" layoutX="100.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clothify Clothing Private Limited">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="251.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Page">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <JFXTextField fx:id="txtUsername" layoutX="239.0" layoutY="175.0" promptText="Username" />
+      <JFXTextField fx:id="txtPassword" layoutX="239.0" layoutY="256.0" promptText="Password" />
+      <JFXButton layoutX="374.0" layoutY="316.0" onAction="#btnLoginOnAction" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #399918;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="489.0" layoutY="316.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #FE0000;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
