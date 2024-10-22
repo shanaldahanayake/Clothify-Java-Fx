@@ -15,7 +15,7 @@
       <JFXTextField fx:id="txtProductName" layoutX="153.0" layoutY="133.0" prefHeight="26.0" prefWidth="200.0" promptText="Product Name" />
       <JFXTextField fx:id="txtPrice" layoutX="393.0" layoutY="133.0" prefHeight="26.0" prefWidth="79.0" promptText="Price" />
       <ComboBox fx:id="cmbCategory" layoutX="14.0" layoutY="184.0" prefHeight="26.0" prefWidth="110.0" promptText="Category" />
-      <TableView fx:id="tblCustomers" layoutY="277.0" prefHeight="202.0" prefWidth="600.0">
+      <TableView fx:id="tblProducts" layoutY="277.0" prefHeight="202.0" prefWidth="600.0">
          <columns>
             <TableColumn fx:id="colCategory" prefWidth="126.4000244140625" text="Category" />
             <TableColumn fx:id="colProductName" prefWidth="233.59996032714844" text="Product Name" />
