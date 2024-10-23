@@ -1,9 +1,12 @@
 package controller.adduser;
 
+import db.DBConnection;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.User;
 import util.CrudUtil;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 
 public class AddUserController implements AddUserService{
@@ -12,41 +15,22 @@ public class AddUserController implements AddUserService{
     public static AddUserController getInstance(){
         return instance==null?instance=new AddUserController():instance;
     }
-
+    ObservableList<User> uncommittedUsers = FXCollections.observableArrayList();
     @Override
-    public boolean addUser(User user) {
-        String SQl = "INSERT INTO users values(?,?,?)";
+    public boolean addUser(User user){
+
         try {
-            Object execute = CrudUtil.execute(SQl,
-                    user.getName(),
-                    user.getUserName(),
-                    user.getPassWord()
-            );
-            System.out.println(execute);
+            uncommittedUsers.add(user);
             return true;
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    @Override
-    public ObservableList<User> getAllUsers() {
-        return null;
+    public ObservableList<User> getUncommittedUsers(){
+        return uncommittedUsers;
     }
 
-    @Override
-    public boolean updateUser(User user) {
-        return false;
-    }
 
-    @Override
-    public boolean deleteUser(String id) {
-        return false;
-    }
-
-    @Override
-    public User searchUser(String id) {
-        return null;
-    }
 }

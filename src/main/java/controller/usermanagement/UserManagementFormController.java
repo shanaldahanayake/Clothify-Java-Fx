@@ -32,4 +32,13 @@ public class UserManagementFormController {
         }
     }
 
+    public void btnAdminOnAction(ActionEvent actionEvent) {
+        try {
+            Stage stage = new Stage();
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/admin_form.fxml"))));
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -91,7 +91,7 @@ public class ProductManagementFormController implements Initializable {
                 cmbSupplierId.getValue()
         );
         if (service.updateProduct(product)) {
-            new Alert(Alert.AlertType.INFORMATION,"Product Added Successfully");
+            new Alert(Alert.AlertType.INFORMATION,"Product Updated Successfully").show();
             loadTable();
         } else {
             new Alert(Alert.AlertType.ERROR).show();

@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HomeFormController {
+
     public void btnUserManagementOnAction(ActionEvent actionEvent) {
         try {
             Stage stage = new Stage();
@@ -57,4 +58,5 @@ public class HomeFormController {
             throw new RuntimeException(e);
         }
     }
+
 }

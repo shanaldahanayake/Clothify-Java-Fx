@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import model.User;
 
+import java.sql.SQLException;
+
 public class AddUserFormController {
 
     AddUserService service = AddUserController.getInstance();
@@ -20,18 +22,17 @@ public class AddUserFormController {
     private JFXTextField txtUsername;
 
     @FXML
-    void btnAddOnAction(ActionEvent event) {
+    void btnAddOnAction(ActionEvent event) throws SQLException {
         if (
                 service.addUser(
                         new User(
-                                txtUsername.getText(),
                                 txtName.getText(),
+                                txtUsername.getText(),
                                 txtPassword.getText()
                         )
                 )
         ) {
             new Alert(Alert.AlertType.INFORMATION, "User Added!!").show();
-            //loadTable();
 
         } else {
             new Alert(Alert.AlertType.ERROR, "User Not Added!!").show();
