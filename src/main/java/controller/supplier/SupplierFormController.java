@@ -113,4 +113,14 @@ public class SupplierFormController implements Initializable {
         txtCompany.setText(newVal.getCompany());
         txtEmail.setText(newVal.getEmail());
     }
+
+    public void btnClearOnAction(ActionEvent actionEvent) {
+        clear();
+    }
+    private void clear(){
+        txtEmail.setText("");
+        txtCompany.setText("");
+        txtSupplierName.setText("");
+        txtSupplierId.setText("");
+    }
 }

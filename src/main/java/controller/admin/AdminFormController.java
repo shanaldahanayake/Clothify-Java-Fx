@@ -32,6 +32,7 @@ public class AdminFormController implements Initializable {
     @FXML
     private JFXTextField txtName;
 
+
     @FXML
     private JFXPasswordField txtPassword;
 
@@ -52,16 +53,18 @@ public class AdminFormController implements Initializable {
                 )
         ) {
             new Alert(Alert.AlertType.INFORMATION, "User Added!!").show();
-
         } else {
             new Alert(Alert.AlertType.ERROR, "User Not Added!!").show();
 
         }
     }
 
+
     @FXML
     void btnRejectOnAction(ActionEvent event) {
-
+        if(service.deleteUsers(txtUserName.getText())){
+            new Alert(Alert.AlertType.INFORMATION,"Request Rejected").show();
+        }
     }
 
     @Override
@@ -78,7 +81,7 @@ public class AdminFormController implements Initializable {
         loadTable();
     }
     private void loadTable() {
-        tblPendingUsers.setItems(addUserService.getUncommittedUsers());
+        tblPendingUsers.setItems(service.getUsers());
     }
 
     private void addValueToText(User newVal) {

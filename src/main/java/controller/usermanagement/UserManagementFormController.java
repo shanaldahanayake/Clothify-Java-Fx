@@ -1,14 +1,22 @@
 package controller.usermanagement;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import singletons.UserNameDto;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class UserManagementFormController {
+public class UserManagementFormController implements Initializable {
+
+    @FXML
+    private JFXButton btnAdmin;
 
     @FXML
     void btnAddUserOnAction(ActionEvent event) {
@@ -40,5 +48,15 @@ public class UserManagementFormController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        if(UserNameDto.getInstance().getUserName().equals("shanal")){
+            btnAdmin.setDisable(false);
+        }else {
+            btnAdmin.setDisable(true);
+        }
+
     }
 }

@@ -32,10 +32,10 @@ public class AddUserFormController {
                         )
                 )
         ) {
-            new Alert(Alert.AlertType.INFORMATION, "User Added!!").show();
+            new Alert(Alert.AlertType.INFORMATION, "Request Sent").show();
 
         } else {
-            new Alert(Alert.AlertType.ERROR, "User Not Added!!").show();
+            new Alert(Alert.AlertType.ERROR, "Request Not Sent").show();
 
         }
     }

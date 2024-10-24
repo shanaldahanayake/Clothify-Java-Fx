@@ -34,7 +34,6 @@ public class LoginFormController {
             userNameDto.setUserName(txtUsername.getText());
 
             if(loginService.login(new Login(txtUsername.getText(),txtPassword.getText()))) {
-                new Alert(Alert.AlertType.INFORMATION,"Login Success").show();
                 Stage stage=new Stage();
                 stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/home_form.fxml"))));
                 stage.show();

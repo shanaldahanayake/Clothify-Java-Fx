@@ -20,10 +20,14 @@ public class AddUserController implements AddUserService{
     public boolean addUser(User user){
 
         try {
-            uncommittedUsers.add(user);
+            String SQl = "INSERT INTO temp values(?,?,?)";
+            CrudUtil.execute(SQl,
+                    user.getName(),
+                    user.getUserName(),
+                    user.getPassWord()
+            );
             return true;
-
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
